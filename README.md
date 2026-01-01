@@ -5,17 +5,13 @@ Proyek ini adalah aplikasi manajemen data karyawan yang terintegrasi dengan tabe
 🚀 Fitur Utama
 
 Manajemen Relasional: Data karyawan terhubung secara dinamis ke tabel departemen.
-
 Pencarian & Pagination: Efisiensi pengambilan data dengan fitur pencarian nama dan pembatasan halaman.
-
 Dashboard Statistik: Ringkasan total karyawan, total gaji, dan rata-rata gaji secara real-time.
-
 Validasi Backend: Keamanan data di sisi server sebelum masuk ke database.
 
 🛠️ Persiapan Database (MySQL)
 
 Jalankan skrip SQL berikut untuk membuat database dan tabel yang diperlukan:
-
 CREATE DATABASE IF NOT EXISTS company_db;
 USE company_db;
 
@@ -52,15 +48,11 @@ Buka folder server/.
 
 Pastikan file server.env sudah sesuai dengan konfigurasi database Anda.
 
-Instal dependensi:
-
+#Instal dependensi:#
 npm install
 
-
-Jalankan server:
-
+#Jalankan server:#
 npm start
-
 
 Server akan berjalan di http://localhost:3000
 
@@ -68,7 +60,7 @@ Server akan berjalan di http://localhost:3000
 
 Buka folder client/.
 
-#Instal dependensi:
+*Instal dependensi:*
 
 npm install
 
