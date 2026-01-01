@@ -1,59 +1,139 @@
-# ManagementDataKaryawanCRUD
+Manajemen Data Karyawan & Departemen - CRUD
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.4.
+Proyek ini adalah aplikasi manajemen data karyawan yang terintegrasi dengan tabel departemen (Relasi One-to-Many). Dibangun menggunakan Angular (Frontend), Node.js/Express (Backend), dan MySQL (Database).
 
-## Development server
+🚀 Fitur Utama
 
-To start a local development server, run:
+Manajemen Relasional: Data karyawan terhubung secara dinamis ke tabel departemen.
 
-```bash
+Pencarian & Pagination: Efisiensi pengambilan data dengan fitur pencarian nama dan pembatasan halaman.
+
+Dashboard Statistik: Ringkasan total karyawan, total gaji, dan rata-rata gaji secara real-time.
+
+Validasi Backend: Keamanan data di sisi server sebelum masuk ke database.
+
+🛠️ Persiapan Database (MySQL)
+
+Jalankan skrip SQL berikut untuk membuat database dan tabel yang diperlukan:
+
+CREATE DATABASE IF NOT EXISTS company_db;
+USE company_db;
+
+-- 1. Tabel Departemen
+CREATE TABLE Departments (
+    DepartmentID INT AUTO_INCREMENT PRIMARY KEY,
+    DepartmentName VARCHAR(100) NOT NULL
+);
+
+-- 2. Tabel Karyawan
+CREATE TABLE Employees (
+    EmployeeID INT AUTO_INCREMENT PRIMARY KEY,
+    Name VARCHAR(100) NOT NULL,
+    Position VARCHAR(50) NOT NULL,
+    Salary DECIMAL(12,2) NOT NULL,
+    DepartmentID INT,
+    CreatedAt DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (DepartmentID) REFERENCES Departments(DepartmentID)
+);
+
+-- 3. Data Awal Departemen
+INSERT INTO Departments (DepartmentName) VALUES 
+('IT Development'), 
+('Human Resources'), 
+('Finance'), 
+('Marketing');
+
+
+📦 Instalasi dan Menjalankan Proyek
+
+1. Backend (Node.js)
+
+Buka folder server/.
+
+Pastikan file server.env sudah sesuai dengan konfigurasi database Anda.
+
+Instal dependensi:
+
+npm install
+
+
+Jalankan server:
+
+npm start
+
+
+Server akan berjalan di http://localhost:3000
+
+2. Frontend (Angular)
+
+Buka folder client/.
+
+Instal dependensi:
+
+npm install
+
+
+Jalankan aplikasi:
+
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-## Code scaffolding
+Akses aplikasi di http://localhost:4200
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+📄 Struktur API (Endpoints)
 
-```bash
-ng generate component component-name
-```
+Method
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Endpoint
 
-```bash
-ng generate --help
-```
+Deskripsi
 
-## Building
+GET
 
-To build the project run:
+/api/departments
 
-```bash
-ng build
-```
+Mengambil semua daftar departemen
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+GET
 
-## Running unit tests
+/api/employees
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Mengambil data karyawan (Join, Search, Pagination)
 
-```bash
-ng test
-```
+POST
 
-## Running end-to-end tests
+/api/employees
 
-For end-to-end (e2e) testing, run:
+Menambahkan karyawan baru
 
-```bash
-ng e2e
-```
+PUT
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+/api/employees/:id
 
-## Additional Resources
+Memperbarui data karyawan berdasarkan ID
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+DELETE
+
+/api/employees/:id
+
+Menghapus data karyawan
+
+📁 Struktur Folder Proyek
+
+manajemen-karyawan/
+├── client/ (Angular)
+│   ├── src/app/app.ts       # Logika Frontend & UI
+│   └── index.html           # File entry point
+├── server/ (Node.js)
+│   ├── server.js            # Main backend file
+│   └── server.env           # Konfigurasi database
+└── README.md                # Dokumentasi proyek
+
+
+📝 Catatan Teknis
+
+CORS: Diaktifkan di backend untuk mengizinkan komunikasi antar port (4200 ke 3000).
+
+Validation: Backend akan menolak permintaan jika data Name, Position, Salary, atau DepartmentID tidak valid atau kosong.
+
+Author : M. Faisal
