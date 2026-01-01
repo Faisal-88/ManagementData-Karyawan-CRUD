@@ -1,10 +1,6 @@
 Manajemen Data Karyawan & Departemen - CRUD
 
-Proyek ini adalah aplikasi manajemen data karyawan yang terintegrasi dengan tabel departemen (Relasi One-to-Many). Dibangun menggunakan Angular (Frontend), Node.js/Express (Backend), dan MySQL (Database).
-
-Aplikasi Kelola Karyawan & Departemen (Fullstack CRUD)
-
-Halo! Dokumentasi ini bakal bantu kamu buat paham cara kerja sistem manajemen karyawan kita. Aplikasi ini sudah keren karena data karyawannya sudah nyambung langsung sama departemen masing-masing. Kita bikin aplikasi ini pakai Angular untuk tampilannya, Node.js/Express untuk otaknya, dan MySQL untuk simpan semua datanya dengan aman!
+Proyek ini adalah aplikasi management data karyawan yang terintegrasi dengan tabel departemen (Relasi One-to-Many). Dibangun menggunakan Angular (Frontend), Node.js/Express (Backend), dan MySQL (Database).
 
 🚀 Fitur-Fitur Kece
 
