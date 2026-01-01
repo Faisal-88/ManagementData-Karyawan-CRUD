@@ -68,12 +68,12 @@ Server akan berjalan di http://localhost:3000
 
 Buka folder client/.
 
-Instal dependensi:
+#Instal dependensi:
 
 npm install
 
 
-Jalankan aplikasi:
+#Jalankan aplikasi:
 
 ng serve
 
@@ -132,8 +132,8 @@ manajemen-karyawan/
 
 📝 Catatan Teknis
 
+Link Database : https://drive.google.com/file/d/1qdoeXbwPyyDK3Xr16TeQ1pyx428WjoWJ/view?usp=sharing
 CORS: Diaktifkan di backend untuk mengizinkan komunikasi antar port (4200 ke 3000).
-
 Validation: Backend akan menolak permintaan jika data Name, Position, Salary, atau DepartmentID tidak valid atau kosong.
 
 Author : M. Faisal
