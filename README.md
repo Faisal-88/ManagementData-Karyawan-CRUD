@@ -1,4 +1,4 @@
-Manajemen Data Karyawan & Departemen - CRUD
+*Manajemen Data Karyawan & Departemen - CRUD*
 
 Proyek ini adalah aplikasi management data karyawan yang terintegrasi dengan tabel departemen (Relasi One-to-Many). Dibangun menggunakan Angular (Frontend), Node.js/Express (Backend), dan MySQL (Database).
 
