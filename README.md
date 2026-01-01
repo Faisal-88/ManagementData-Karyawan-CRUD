@@ -21,12 +21,14 @@ CREATE DATABASE IF NOT EXISTS company_db;
 USE company_db;
 
 -- 1. Bikin Tabel Departemen
+
 CREATE TABLE Departments (
     DepartmentID INT AUTO_INCREMENT PRIMARY KEY,
     DepartmentName VARCHAR(100) NOT NULL
 );
 
 -- 2. Bikin Tabel Karyawan
+
 CREATE TABLE Employees (
     EmployeeID INT AUTO_INCREMENT PRIMARY KEY,
     Name VARCHAR(100) NOT NULL,
@@ -37,7 +39,8 @@ CREATE TABLE Employees (
     FOREIGN KEY (DepartmentID) REFERENCES Departments(DepartmentID)
 );
 
--- 3. Isi Data Awal Departemen Biar Nggak Kosong
+-- 3. Isi Data Awal Departemen Biar Tidak Kosong
+
 INSERT INTO Departments (DepartmentName) VALUES 
 ('IT Development'), 
 ('Human Resources'), 
