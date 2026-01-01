@@ -1,20 +1,20 @@
-*Manajemen Data Karyawan & Departemen - CRUD*
+**Manajemen Data Karyawan & Departemen - CRUD**
 
 Proyek ini adalah aplikasi management data karyawan yang terintegrasi dengan tabel departemen (Relasi One-to-Many). Dibangun menggunakan Angular (Frontend), Node.js/Express (Backend), dan MySQL (Database).
 
-🚀 Fitur-Fitur Kece
+🚀 Fitur Utama
 
-Data Saling Nyambung: Karyawan dan departemen sudah otomatis terhubung. Jadi, nggak perlu ribet lagi deh!
+Arsitektur Relasional Data: Mengelola keterhubungan dinamis antara entitas karyawan dan departemen melalui skema relasi One-to-Many.
 
-Cari Data Nggak Pakai Lama: Ada fitur cari nama dan pembagian halaman (pagination). Biarpun datanya ribuan, tetap terasa enteng!
+Mekanisme Pencarian dan Navigasi Data: Menyediakan fungsionalitas pencarian nama yang dioptimalkan serta implementasi pagination untuk menjamin efisiensi pengambilan data berskala besar.
 
-Dashboard Statistik Langsung: Kamu bisa lihat total karyawan, total gaji, sampai rata-rata gaji secara real-time. Mantap kan?
+Panel Dasbor Analitik: Menyajikan ringkasan statistik secara real-time, mencakup akumulasi jumlah personel, total pengeluaran kompensasi, serta nilai rata-rata remunerasi.
 
-Aman & Terjaga: Kita sudah pasang validasi ketat di sisi server, jadi data yang masuk pasti benar dan rapi!
+Validasi Integritas Data: Memastikan keamanan dan validitas informasi melalui prosedur validasi ketat pada lapisan backend sebelum proses persistensi data dilakukan.
 
 🛠️ Cara Setup Database (MySQL)
 
-Ikuti langkah simpel ini buat bikin database dan tabel-tabelnya di MySQL kamu ya:
+**Ikuti langkah simpel ini buat bikin database dan tabel-tabelnya di MySQL kamu ya:**
 
 CREATE DATABASE IF NOT EXISTS company_db;
 USE company_db;
@@ -44,15 +44,15 @@ INSERT INTO Departments (DepartmentName) VALUES
 ('Marketing');
 
 
-📦 Yuk, Mulai Jalankan!
+📦 Installasi Backend!
 
-1. Nyalakan Backend (Node.js)
+1. Setup Backend (Node.js)
 
-Masuk dulu ke folder server/.
+Masuk/buat dulu ke folder backend/.
 
-Jangan lupa cek file server.env, pastikan settingan databasenya sudah pas sama punya kamu ya.
+Jangan lupa cek folder backend pada file .env, pastikan settingan databasenya sesuai dengan mysql nya.
 
-Install dulu bahan-bahannya:
+Install setup backend node express js:
 
 npm install
 
@@ -62,9 +62,9 @@ Jalankan servernya:
 npm start
 
 
-Nanti API-nya bakal aktif di http://localhost:3000 ya!
+Nanti API-nya bakal aktif di http://localhost:3000
 
-2. Nyalakan Frontend (Angular)
+2. Installasi Frontend (Angular)
 
 Sekarang masuk ke folder client/.
 
@@ -78,7 +78,7 @@ Jalankan aplikasinya:
 ng serve
 
 
-Langsung buka browser dan cek di http://localhost:4200 ya!
+Langsung buka browser dan cek di http://localhost:4200
 
 📄 Daftar Alamat API (Endpoints)
 
@@ -117,18 +117,6 @@ DELETE
 /api/employees/:id
 
 Hapus data karyawan dari sistem.
-
-📁 Struktur Folder Kita
-
-manajemen-karyawan/
-├── client/ (Angular)
-│   ├── src/app/app.ts       # Logika & Tampilan Utama
-│   └── index.html           # Halaman Depan
-├── server/ (Node.js)
-│   ├── server.js            # Otak Backend
-│   └── server.env           # Settingan Rahasia
-└── README.md                # Catatan ini
-
 
 
 📝 Catatan Teknis
