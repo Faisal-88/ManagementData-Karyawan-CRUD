@@ -2,26 +2,34 @@ Manajemen Data Karyawan & Departemen - CRUD
 
 Proyek ini adalah aplikasi manajemen data karyawan yang terintegrasi dengan tabel departemen (Relasi One-to-Many). Dibangun menggunakan Angular (Frontend), Node.js/Express (Backend), dan MySQL (Database).
 
-🚀 Fitur Utama
+Aplikasi Kelola Karyawan & Departemen (Fullstack CRUD)
 
-Manajemen Relasional: Data karyawan terhubung secara dinamis ke tabel departemen.
-Pencarian & Pagination: Efisiensi pengambilan data dengan fitur pencarian nama dan pembatasan halaman.
-Dashboard Statistik: Ringkasan total karyawan, total gaji, dan rata-rata gaji secara real-time.
-Validasi Backend: Keamanan data di sisi server sebelum masuk ke database.
+Halo! Dokumentasi ini bakal bantu kamu buat paham cara kerja sistem manajemen karyawan kita. Aplikasi ini sudah keren karena data karyawannya sudah nyambung langsung sama departemen masing-masing. Kita bikin aplikasi ini pakai Angular untuk tampilannya, Node.js/Express untuk otaknya, dan MySQL untuk simpan semua datanya dengan aman!
 
-🛠️ Persiapan Database (MySQL)
+🚀 Fitur-Fitur Kece
 
-Jalankan skrip SQL berikut untuk membuat database dan tabel yang diperlukan:
+Data Saling Nyambung: Karyawan dan departemen sudah otomatis terhubung. Jadi, nggak perlu ribet lagi deh!
+
+Cari Data Nggak Pakai Lama: Ada fitur cari nama dan pembagian halaman (pagination). Biarpun datanya ribuan, tetap terasa enteng!
+
+Dashboard Statistik Langsung: Kamu bisa lihat total karyawan, total gaji, sampai rata-rata gaji secara real-time. Mantap kan?
+
+Aman & Terjaga: Kita sudah pasang validasi ketat di sisi server, jadi data yang masuk pasti benar dan rapi!
+
+🛠️ Cara Setup Database (MySQL)
+
+Ikuti langkah simpel ini buat bikin database dan tabel-tabelnya di MySQL kamu ya:
+
 CREATE DATABASE IF NOT EXISTS company_db;
 USE company_db;
 
--- 1. Tabel Departemen
+-- 1. Bikin Tabel Departemen
 CREATE TABLE Departments (
     DepartmentID INT AUTO_INCREMENT PRIMARY KEY,
     DepartmentName VARCHAR(100) NOT NULL
 );
 
--- 2. Tabel Karyawan
+-- 2. Bikin Tabel Karyawan
 CREATE TABLE Employees (
     EmployeeID INT AUTO_INCREMENT PRIMARY KEY,
     Name VARCHAR(100) NOT NULL,
@@ -32,7 +40,7 @@ CREATE TABLE Employees (
     FOREIGN KEY (DepartmentID) REFERENCES Departments(DepartmentID)
 );
 
--- 3. Data Awal Departemen
+-- 3. Isi Data Awal Departemen Biar Nggak Kosong
 INSERT INTO Departments (DepartmentName) VALUES 
 ('IT Development'), 
 ('Human Resources'), 
@@ -40,86 +48,91 @@ INSERT INTO Departments (DepartmentName) VALUES
 ('Marketing');
 
 
-📦 Instalasi dan Menjalankan Proyek
+📦 Yuk, Mulai Jalankan!
 
-1. Backend (Node.js)
+1. Nyalakan Backend (Node.js)
 
-Buka folder server/.
+Masuk dulu ke folder server/.
 
-Pastikan file server.env sudah sesuai dengan konfigurasi database Anda.
+Jangan lupa cek file server.env, pastikan settingan databasenya sudah pas sama punya kamu ya.
 
-#Instal dependensi:#
+Install dulu bahan-bahannya:
+
 npm install
 
-#Jalankan server:#
+
+Jalankan servernya:
+
 npm start
 
-Server akan berjalan di http://localhost:3000
 
-2. Frontend (Angular)
+Nanti API-nya bakal aktif di http://localhost:3000 ya!
 
-Buka folder client/.
+2. Nyalakan Frontend (Angular)
 
-*Instal dependensi:*
+Sekarang masuk ke folder client/.
+
+Install juga bahan-bahannya di sini:
 
 npm install
 
 
-#Jalankan aplikasi:
+Jalankan aplikasinya:
 
 ng serve
 
 
-Akses aplikasi di http://localhost:4200
+Langsung buka browser dan cek di http://localhost:4200 ya!
 
-📄 Struktur API (Endpoints)
+📄 Daftar Alamat API (Endpoints)
 
-Method
+Cara Kerja
 
-Endpoint
+Alamat (Endpoint)
 
-Deskripsi
+Kegunaan
 
 GET
 
 /api/departments
 
-Mengambil semua daftar departemen
+Ambil semua daftar departemen yang ada.
 
 GET
 
 /api/employees
 
-Mengambil data karyawan (Join, Search, Pagination)
+Lihat semua karyawan (bisa cari & ganti halaman juga).
 
 POST
 
 /api/employees
 
-Menambahkan karyawan baru
+Tambah karyawan baru ke sistem.
 
 PUT
 
 /api/employees/:id
 
-Memperbarui data karyawan berdasarkan ID
+Edit data karyawan pakai ID mereka.
 
 DELETE
 
 /api/employees/:id
 
-Menghapus data karyawan
+Hapus data karyawan dari sistem.
 
-📁 Struktur Folder Proyek
+📁 Struktur Folder Kita
 
 manajemen-karyawan/
 ├── client/ (Angular)
-│   ├── src/app/app.ts       # Logika Frontend & UI
-│   └── index.html           # File entry point
+│   ├── src/app/app.ts       # Logika & Tampilan Utama
+│   └── index.html           # Halaman Depan
 ├── server/ (Node.js)
-│   ├── server.js            # Main backend file
-│   └── server.env           # Konfigurasi database
-└── README.md                # Dokumentasi proyek
+│   ├── server.js            # Otak Backend
+│   └── server.env           # Settingan Rahasia
+└── README.md                # Catatan ini
+
 
 
 📝 Catatan Teknis
