@@ -14,9 +14,10 @@ Validasi Integritas Data: Memastikan keamanan dan validitas informasi melalui pr
 
 🛠️ Cara Setup Database (MySQL)
 
-**Ikuti langkah simpel ini buat bikin database dan tabel-tabelnya di MySQL kamu ya:**
+**Ikuti langkah simpel ini buat bikin database dan tabel-tabelnya di MySQL yah:**
 
 CREATE DATABASE IF NOT EXISTS company_db;
+
 USE company_db;
 
 -- 1. Bikin Tabel Departemen
