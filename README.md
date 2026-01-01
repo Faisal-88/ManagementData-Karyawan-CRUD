@@ -48,6 +48,8 @@ INSERT INTO Departments (DepartmentName) VALUES
 ('Marketing');
 
 
+
+
 📦 Installasi Backend!
 
 1. Setup Backend (Node.js)
@@ -56,28 +58,30 @@ Masuk/buat dulu ke folder backend/.
 
 Jangan lupa cek folder backend pada file .env, pastikan settingan databasenya sesuai dengan mysql nya.
 
-Install setup backend node express js:
+**Install setup backend node express js:**
 
 npm install
 
 
-Jalankan servernya:
+**Jalankan servernya:**
 
 npm start
 
 
 Nanti API-nya bakal aktif di http://localhost:3000
 
+
+
 2. Installasi Frontend (Angular)
 
 Sekarang masuk ke folder client/.
 
-Install juga bahan-bahannya di sini:
+**Install juga bahan-bahannya di sini:**
 
 npm install
 
 
-Jalankan aplikasinya:
+**Jalankan aplikasinya:**
 
 ng serve
 
@@ -126,6 +130,7 @@ Hapus data karyawan dari sistem.
 📝 Catatan Teknis
 
 Link Database : https://drive.google.com/file/d/1qdoeXbwPyyDK3Xr16TeQ1pyx428WjoWJ/view?usp=sharing
+
 CORS: Diaktifkan di backend untuk mengizinkan komunikasi antar port (4200 ke 3000).
 Validation: Backend akan menolak permintaan jika data Name, Position, Salary, atau DepartmentID tidak valid atau kosong.
 
